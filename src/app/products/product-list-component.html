@@ -15,7 +15,9 @@
             <thead>
               <tr>
                 <th>
-                  <button class="btn btn-primary">
+                  <button class="btn btn-primary"
+                  (click)='toggleImage()'
+                  >
                     Show Image
                   </button>
                 </th>
@@ -26,7 +28,12 @@
                 <th>5 Star Rating</th>
               </tr>
               <tr *ngFor='let product of products'>
-                <td></td>
+                <td><img 
+                  [src]='product.imageUrl'
+                  title='{{product.productName}}'
+                  height="{{imageWidth}}"
+                  [style.width.px]=imageWidth
+                                    ></td>
                 <td>{{product.productName}}</td>
                 <td>{{product.productCode}}</td>
                 <td>{{product.releaseDate}}</td>
